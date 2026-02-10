@@ -34,7 +34,7 @@ let IniciarPrograma=prompt("Bienvenido a Olfate-e Perfumeria,Si desea comprar el
     
         if(TotalCompra > 0 ){
     
-        let ElegirPago=parseInt(prompt("Si desea pagar con tarjeta eliga 1 si es con tranferencia(15% de descuento) eliga 2"));
+        let ElegirPago=parseInt(prompt("Si desea pagar con tarjeta eliga 1, si desea pagar con tranferencia(15% de descuento) eliga 2"));
         while(ElegirPago!=1 && ElegirPago !=2 || isNaN(ElegirPago)){
             alert("Opcion incorrecta");
             ElegirPago=parseInt(prompt("Si desea pagar con tarjeta eliga 1, si desea pagar con tranferencia(15% de descuento) eliga 2"));
