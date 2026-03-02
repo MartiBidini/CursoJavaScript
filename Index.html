@@ -3,12 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="Css/style.css">
     <script defer src="js/main.js"></script>
-    <title>TP1-Semana 4</title>
+    <title>Olfta-E Perfumeria</title>
 </head>
 <body>
-    <h1>Martiniano Bidini</h1>
+
+    <header class="header">
+    <nav class="nav">
+    <ul class="nav_list">
+    <li class="nav_item"><a href="#inicio" >Inicio</a></li>
+    <li class="nav_item"><a href="#hombre">Hombre</a></li>
+    <li class="nav_item"><a href="#mujer">Mujer</a></li>
+    <li class="nav_item"><a href="#contacto">Contacto</a></li>
+    <li class="nav_item carrito">
+    <a href="#">
+        <i class="fa-solid fa-cart-shopping"></i>
+    </a>
+</li>
+    </ul>
+    </nav>
+</header>
+
+    <div class="hero">
+            <img class="hero_image" src="images/HeroPerfumeria.png" alt="">
+            <div class="overplay_hero"></div>
+            <div class="hero_content">
+    <a class="boton_hero" id="btnHero">Ver Catálogo</a>
+    </div>
+        </div>
+    
+        <section class="catalogo">
+    <div class="title_main"><h3>Descubrí tu próxima esencia favorita</h3></div>
+    
+    <div class="slider">
+
+        <div class="card">
+            <img src="images/YaraPink.png" alt="">
+            <h3>Yara Pink</h3>
+            <p class="info">Mujer • Dia</p>
+            <p class="precio">$90.000</p>
+            <button>Añadir al carrito</button>
+        </div>
+        
+        <div class="card">
+            <img src="images/MandarinSky.png" alt="">
+            <h3>Mandarin Sky</h3>
+            <p class="info">Hombre • Dia o Noche</p>
+            <p class="precio">$80.000</p>
+            <button>Añadir al carrito</button>
+        </div>
+
+        <div class="card">
+            <img src="images/FakharBlack.png" alt="">
+            <h3>Fakhar Black</h3>
+            <p class="info">Hombre • Dia</p>
+            <p class="precio">$60.000</p>
+            <button>Añadir al carrito</button>
+        </div>
+
+        <div class="card">
+            <img src="images/ArmafYumYum.png" alt="">
+            <h3>Yum Yum Armaf</h3>
+            <p class="info">Mujer • Dia</p>
+            <p class="precio">$85.000</p>
+            <button>Añadir al carrito</button>
+        </div>
+    
+        <div class="card">
+            <img src="images/Afnan9PM.png" alt="">
+            <h3>Afman 9PM</h3>
+            <p class="info">Hombre • Noche</p>
+            <p class="precio">$95.000</p>
+            <button>Añadir al carrito</button>
+        </div>
+
+    </div>
+        </section>
+
+        <footer id="contacto">
+    <div class="linea_amarilla"></div>
+    <div class="footer">
+        <img class="logo_footer" src="images/LogoPerfumeria.png" alt="Logofooter">
+            <p class="footer_items"> <i class="fa-solid fa-phone"></i> +54 11 1234-5678</p>
+            <p class="footer_items"> <i class="fa-brands fa-instagram"></i> Olfate.Perfumeria</p>
+    </div>
+    <p class="footer_copy">©2026 olfateperfumeria.com.ar Todos los derechos reservados Términos y Condiciones | Política de calidad Olfate-E Perfumeria | Legales</p>
+    </footer>
 </body>
 </html>
 
