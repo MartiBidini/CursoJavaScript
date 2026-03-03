@@ -35,3 +35,23 @@ function MostrarPerfumes(Perfumes){
 
 MostrarPerfumes(Perfumes);
 
+const Carrito = [];
+
+const BotonAñadirCarrito = document.querySelectorAll(".btn-agregar");
+
+function AñadirAlCarrito(){
+
+    BotonAñadirCarrito.forEach(boton=> {
+    
+    boton.addEventListener("click",function(){  
+
+    const idBoton = boton.id.split("-")[1];
+        const PerfumeElegido = Perfumes.find(perfume => perfume.id == idBoton);
+        Carrito.push(PerfumeElegido);
+});
+});
+}
+
+AñadirAlCarrito();
+
+
