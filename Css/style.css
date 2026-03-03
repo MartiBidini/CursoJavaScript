@@ -232,3 +232,95 @@ footer {
     font-size: 14px;
     color: #9b7f37;
 }
+
+/*Carrito*/
+
+.panel_carrito {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 350px;
+    height: 90vh; 
+    background-color: #0F0F0F;
+    border-left: 1px solid rgba(212, 175, 55, 0.4);
+    box-shadow: -5px 0 15px rgba(0,0,0,0.7);
+    padding: 30px 20px;
+    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+    transition: right 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); 
+}
+.panel_carrito.activo {
+    right: 0; 
+}
+.carrito_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+.carrito_title h2 {
+    font-family: 'Playfair Display', serif;
+    color: #D4AF37;
+    margin: 0;
+    font-size: 26px;
+    letter-spacing: 1px;
+}
+#cerrar-carrito {
+    background: none;
+    border: none;
+    color: #E6C77A;
+    font-size: 22px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+#cerrar-carrito:hover {
+    color: #FFF;
+    transform: scale(1.1);
+}
+.carrito_items {
+    margin-top: auto; 
+    border-top: 1px solid rgba(212, 175, 55, 0.3);
+    padding-top: 20px;
+}
+.carrito_items h3 {
+    color: #FFF;
+    font-size: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+#precio-total {
+    color: #D4AF37;
+}
+#vaciar-carrito, #finalizar-compra {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-bottom: 12px;
+}
+#vaciar-carrito {
+    background-color: transparent;
+    color: #E6C77A;
+    border: 1px solid #E6C77A;
+}
+#vaciar-carrito:hover {
+    background-color: rgba(230, 199, 122, 0.1);
+    color: #FFF;
+}
+#finalizar-compra {
+    background-color: #D4AF37;
+    color: #0F0F0F;
+    border: none;
+}
+#finalizar-compra:hover {
+    background-color: #f1cc64;
+    transform: translateY(-2px);
+}

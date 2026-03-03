@@ -12,6 +12,7 @@ const Perfumes=[
     {id: 10,Nombre:"The Kingdom For Men",Categoria:"Hombre - Noche",Precio:90000,imagen:"images/TheKindomForMen.png"},
 ]
 
+//Cards de Perfumes
 const ContenedorPerfumes = document.getElementById("contenedor_perfumes");
 
 function MostrarPerfumes(Perfumes){
@@ -35,7 +36,25 @@ function MostrarPerfumes(Perfumes){
 
 MostrarPerfumes(Perfumes);
 
-const Carrito = [];
+//Panel de carrito
+
+const botonAbrirCarrito = document.getElementById("abrir-carrito");
+const botonCerrarCarrito = document.getElementById("cerrar-carrito");
+const panelCarrito = document.getElementById("panel_carrito");
+
+botonAbrirCarrito.addEventListener("click", (evento) => {
+    evento.preventDefault();
+    panelCarrito.classList.add("activo");
+});
+
+botonCerrarCarrito.addEventListener("click", () => {
+    panelCarrito.classList.remove("activo");
+});
+
+
+//Funcion de boton de las cards "Añadir al carrito"
+
+let Carrito = JSON.parse(localStorage.getItem("MiCarrito")) || [];
 
 const BotonAñadirCarrito = document.querySelectorAll(".btn-agregar");
 
@@ -48,6 +67,7 @@ function AñadirAlCarrito(){
     const idBoton = boton.id.split("-")[1];
         const PerfumeElegido = Perfumes.find(perfume => perfume.id == idBoton);
         Carrito.push(PerfumeElegido);
+        localStorage.setItem("MiCarrito", JSON.stringify(Carrito));
 });
 });
 }

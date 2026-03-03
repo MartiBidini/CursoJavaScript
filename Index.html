@@ -22,7 +22,7 @@
     -->
     <li class="nav_item"><a href="#contacto">Contacto</a></li>
     <li class="nav_item carrito">
-    <a href="#">
+    <a href="" id="abrir-carrito">
         <i class="fa-solid fa-cart-shopping"></i>
     </a>
 </li>
@@ -55,6 +55,19 @@
     </div>
     <p class="footer_copy">©2026 olfateperfumeria.com.ar Todos los derechos reservados Términos y Condiciones | Política de calidad Olfate-E Perfumeria | Legales</p>
     </footer>
+
+    <div class="panel_carrito" id="panel_carrito">
+    <div class="carrito_title">
+        <h2>Mi Carrito de Compras</h2>
+        <button id="cerrar-carrito"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="carrito_items">
+        <h3>Total: $<span id="precio-total">0</span></h3>
+        <button id="vaciar-carrito">Vaciar Carrito</button>
+        <button id="finalizar-compra">Finalizar Compra</button>
+    </div>
+</div>
+
 </body>
 </html>
 
