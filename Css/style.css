@@ -1,3 +1,6 @@
+html{
+    scroll-behavior: smooth;
+}
 body{
     background-color: #0F0F0F;
     margin: 0;
@@ -16,8 +19,8 @@ body{
     width: 100%;
     top: 0;
     z-index:1000;
-    padding-right: 225px;
     border-bottom: 0.5px solid #D4AF37;
+    box-sizing: border-box;
 }
 
 .nav{
@@ -32,12 +35,14 @@ body{
     align-items: center;
     list-style: none;
     gap: 60px;
+    width: 100%;
 }
 .nav_item a{
     color:#E6C77A;
-    font-size: 20px;
+    font-size: 21px;
     font-family: 'Cormorant Garamond',serif;
     text-decoration: none;
+    font-weight: bold;
     transition: 0.3s;
     letter-spacing: 1px;
 }
@@ -47,7 +52,8 @@ body{
 }
 
 .carrito{
-    padding-left: 650px;
+    margin-left: auto;
+    margin-right: 200px;
 }
 
 /*Hero*/
@@ -124,7 +130,6 @@ body{
     font-size: 38px;
     text-align: center;
     color: #D4AF37;
-    margin: 20px 0 15px 0;
     letter-spacing: 2px;
     font-weight: 500;
 }
@@ -165,8 +170,7 @@ body{
 .card h3{
     font-family: 'Playfair Display', serif;
     color: #D4AF37;
-    font-size: 22px;
-    margin-bottom: px;
+    font-size: 20px;
     letter-spacing: 1px;
 }
 .info{
@@ -177,13 +181,13 @@ body{
 .precio{
     color: #ffffff;
     font-size: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 .card button{
     background: #D4AF37;
     border: none;
     padding: 10px 20px;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: bold;
     cursor: pointer;
     border-radius: 6px;
