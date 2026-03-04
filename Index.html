@@ -24,6 +24,7 @@
     <li class="nav_item carrito">
     <a href="" id="abrir-carrito">
         <i class="fa-solid fa-cart-shopping"></i>
+        <span id="contador-carrito">0</span>
     </a>
 </li>
     </ul>
@@ -61,12 +62,16 @@
         <h2>Mi Carrito de Compras</h2>
         <button id="cerrar-carrito"><i class="fa-solid fa-xmark"></i></button>
     </div>
+
+    <div id="contenedor_items_carrito"></div>
+
     <div class="carrito_items">
         <h3>Total: $<span id="precio-total">0</span></h3>
         <button id="vaciar-carrito">Vaciar Carrito</button>
         <button id="finalizar-compra">Finalizar Compra</button>
     </div>
 </div>
+<div id="toast-mensaje" class="toast-oculto">¡Producto agregado al carrito!</div>
 
 </body>
 </html>
