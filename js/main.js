@@ -1,16 +1,17 @@
 
-const Perfumes=[
-    {id: 1,Nombre:"Yara Pink",Categoria:"Mujer - Dia",Precio:82000,imagen:"images/YaraPink.png"},
-    {id: 2,Nombre:"Mandarin Sky",Categoria:"Hombre - Dia o Noche",Precio:85000,imagen:"images/MandarinSky.png"},
-    {id: 3,Nombre:"Fakhar Black",Categoria:"Hombre - Dia",Precio:60000,imagen:"images/FakharBlack.png"},
-    {id: 4,Nombre:"Yum Yum",Categoria:"Mujer - Dia",Precio:80000,imagen:"images/ArmafYumYum.png"},
-    {id: 5,Nombre:"Afnan 9 PM",Categoria:"Hombre - Noche",Precio:90000,imagen:"images/Afnan9PM.png"},
-    {id: 6,Nombre:"Yara Candy",Categoria:"Mujer - Dia",Precio:85000,imagen:"images/YaraCandy.png"},
-    {id: 7,Nombre:"Club de Nuit Intense",Categoria:"Hombre - Dia o Noche",Precio:95000,imagen:"images/ClubdeNuitIntense.png"},
-    {id: 8,Nombre:"Hawas Ice",Categoria:"Hombre - Dia",Precio:70000,imagen:"images/HawasIce.png"},
-    {id: 9,Nombre:"Honor & Glory",Categoria:"Mujer o Hombre - Dia o Noche ",Precio:80000,imagen:"images/HonorandGlory.png"},
-    {id: 10,Nombre:"The Kingdom For Men",Categoria:"Hombre - Noche",Precio:90000,imagen:"images/TheKindomForMen.png"},
-]
+let Perfumes=[];
+
+async function cargarProductos() {
+    
+    const productos = await fetch("js/productos.json");
+    
+    Perfumes = await productos.json();
+    
+    MostrarPerfumes(Perfumes);
+    AñadirAlCarrito();
+}
+
+cargarProductos();
 
 //Cards de Perfumes
 const ContenedorPerfumes = document.getElementById("contenedor_perfumes");
@@ -34,8 +35,6 @@ function MostrarPerfumes(Perfumes){
     });
 }
 
-MostrarPerfumes(Perfumes);
-
 //Panel de carrito
 
 const botonAbrirCarrito = document.getElementById("abrir-carrito");
@@ -56,9 +55,9 @@ botonCerrarCarrito.addEventListener("click", () => {
 
 let Carrito = JSON.parse(localStorage.getItem("MiCarrito")) || [];
 
-const BotonAñadirCarrito = document.querySelectorAll(".btn-agregar");
-
 function AñadirAlCarrito(){
+
+    const BotonAñadirCarrito = document.querySelectorAll(".btn-agregar");
 
     BotonAñadirCarrito.forEach(boton=> {
     
@@ -76,8 +75,6 @@ function AñadirAlCarrito(){
 });
 });
 }
-
-AñadirAlCarrito();
 
 //Items en el carrito
 
