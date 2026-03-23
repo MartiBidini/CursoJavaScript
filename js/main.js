@@ -63,10 +63,18 @@ function AñadirAlCarrito(){
     
     boton.addEventListener("click",function(){  
 
-    const idBoton = boton.id.split("-")[1];
+    const idBoton =parseInt( boton.id.split("-")[1]);
         const PerfumeElegido = Perfumes.find(perfume => perfume.id == idBoton);
     
-        Carrito.push(PerfumeElegido);
+        const productosencarrito = Carrito.find(producto=>producto.id==idBoton);
+
+        if(productosencarrito){
+            productosencarrito.cantidad++;
+        }
+        else{
+            PerfumeElegido.cantidad=1;
+            Carrito.push(PerfumeElegido);
+        }
         
         localStorage.setItem("MiCarrito", JSON.stringify(Carrito));
         
@@ -91,10 +99,18 @@ function mostrarCarrito() {
 
         
         div.innerHTML = `
-            <p>${producto.Nombre}</p>
-            <p>Precio: $${producto.Precio.toLocaleString()}</p>
+        <p class="nombre-item">${producto.Nombre}</p>
+            
+            <div class="controles-cantidad">
+                <button class="btn-restar" id="restar-${producto.id}">-</button>
+                <p class="cantidad-item">${producto.cantidad}</p>
+                <button class="btn-sumar" id="sumar-${producto.id}">+</button>
+            </div>
+
+            <p class="precio-item">$${(producto.Precio * producto.cantidad).toLocaleString()}</p>
+            
             <button class="boton-eliminar" id="eliminar-${producto.id}"> 
-            <i class="fa-solid fa-trash"></i>
+                <i class="fa-solid fa-trash"></i>
             </button>
         `;
 
@@ -102,7 +118,7 @@ function mostrarCarrito() {
         });
 
         const precioTotal = document.getElementById("precio-total");
-        const totalCalculado = Carrito.reduce( (acumulador, producto) => acumulador + producto.Precio, 0 );
+        const totalCalculado = Carrito.reduce( (acumulador, producto) => acumulador + (producto.Precio * producto.cantidad), 0 );
         precioTotal.innerText = totalCalculado.toLocaleString();
 
         const botonesTachoBasura = document.querySelectorAll(".boton-eliminar");
