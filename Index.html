@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon"href="images/LogoPerfumeria.png" type="image/png">
+    <link rel="icon" href="images/LogoPerfumeria.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="Css/style.css">
@@ -13,73 +13,173 @@
 </head>
 <body>
     <header class="header">
-    <nav class="nav">
-    <ul class="nav_list">
-
-    <li class="nav_item"><a href="#inicio" >Inicio</a></li>
-    <!--
-    <li class="nav_item"><a href="#hombre">Hombre</a></li>
-    <li class="nav_item"><a href="#mujer">Mujer</a></li>
-    -->
-    <li class="nav_item"><a href="#contacto">Contacto</a></li>
-    <li class="nav_item carrito">
-    <a href="" id="abrir-carrito">
-        <i class="fa-solid fa-cart-shopping"></i>
-        <span id="contador-carrito">0</span>
-    </a>
-</li>
-    </ul>
-    </nav>
-</header>
+        <nav class="nav">
+            <ul class="nav_list">
+                <li class="nav_item"><a href="#inicio">Inicio</a></li>
+                <li class="nav_item"><a href="#contacto">Contacto</a></li>
+                <li class="nav_item carrito">
+                    <a href="" id="abrir-carrito">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span id="contador-carrito">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
     <div class="hero" id="inicio">
-            <img class="hero_image" src="images/HeroPerfumeria.png" alt="">
-            <div class="overplay_hero"></div>
-            <div class="hero_content">
-    <a href="#catalogo" class="boton_hero" id="btnHero">Ver Catálogo</a>
-    </div>
+        <img class="hero_image" src="images/HeroPerfumeria.png" alt="">
+        <div class="overplay_hero"></div>
+        <div class="hero_content">
+            <a href="#catalogo" class="boton_hero" id="btnHero">Ver Catálogo</a>
         </div>
-    
-        <section class="catalogo" id="catalogo">
-    <div class="title_main"><h3>Descubrí tu próxima esencia favorita</h3></div>
-
-    <div class="botones-flecha">
-                <button id="flecha-izquierda" class="flecha-slider"><i class="fa-solid fa-chevron-left"></i></button>
-    
-    <div class="slider" id="contenedor_perfumes"></div>
-
-        <button id="flecha-derecha" class="flecha-slider"><i class="fa-solid fa-chevron-right"></i></button>
-
     </div>
-        </section>
+    
+    <section class="catalogo" id="catalogo">
+        <div class="title_main"><h3>Descubrí tu próxima esencia favorita</h3></div>
+        <div class="botones-flecha">
+            <button id="flecha-izquierda" class="flecha-slider"><i class="fa-solid fa-chevron-left"></i></button>
+            <div class="slider" id="contenedor_perfumes"></div>
+            <button id="flecha-derecha" class="flecha-slider"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+    </section>
 
-        <footer id="contacto">
-    <div class="linea_amarilla"></div>
-    <div class="footer">
-        <img class="logo_footer" src="images/LogoPerfumeria.png" alt="Logofooter">
+    <footer id="contacto">
+        <div class="linea_amarilla"></div>
+        <div class="footer">
+            <img class="logo_footer" src="images/LogoPerfumeria.png" alt="Logofooter">
             <p class="footer_items"> <i class="fa-solid fa-phone"></i> +54 11 1234-5678</p>
             <p class="footer_items"> <i class="fa-brands fa-instagram"></i> Olfate.Perfumeria</p>
-    </div>
-    <p class="footer_copy">©2026 olfateperfumeria.com.ar Todos los derechos reservados Términos y Condiciones | Política de calidad Olfate-E Perfumeria | Legales</p>
+        </div>
+        <p class="footer_copy">©2026 olfateperfumeria.com.ar Todos los derechos reservados Términos y Condiciones | Política de calidad Olfate-E Perfumeria | Legales</p>
     </footer>
 
     <div class="panel_carrito" id="panel_carrito">
-    <div class="carrito_title">
-        <h2>Mi Carrito de Compras</h2>
-        <button id="cerrar-carrito"><i class="fa-solid fa-xmark"></i></button>
+        <div class="carrito_title">
+            <h2>Mi Carrito de Compras</h2>
+            <button id="cerrar-carrito"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div id="contenedor_items_carrito"></div>
+        <div class="carrito_items">
+            <h3>Total: $<span id="precio-total">0</span></h3>
+            <button id="vaciar-carrito">Vaciar Carrito</button>
+            <button id="finalizar-compra">Finalizar Compra</button>
+        </div>
     </div>
 
-    <div id="contenedor_items_carrito"></div>
+    <div id="checkout" class="checkout-modal">
+        <div class="checkout-modal-wrap modal-oculto">
+            
+            <div class="resumen-compra">
+                <div class="header-resumen">
+                    <h3>Resumen de Compra</h3>
+                </div>
+                <div id="resumen-compra-items"></div>
+                <div class="resumen-total">
+                    <h3>Total a Pagar: $<span id="resumen-total-pago">0</span></h3>
+                </div>
+            </div>
 
-    <div class="carrito_items">
-        <h3>Total: $<span id="precio-total">0</span></h3>
-        <button id="vaciar-carrito">Vaciar Carrito</button>
-        <button id="finalizar-compra">Finalizar Compra</button>
+            <div class="contenido-form-fields">
+                <div class="header-form">
+                    <h2>Finalizar Compra</h2>
+                    <button id="cerrar-modal"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                
+                <form id="formulario">
+                    <div class="header-datos-comprador">
+                        <h3>Datos del Comprador</h3>
+                    </div>
+                    
+                    <div class="fila-inputs">
+                        <div class="items-form">
+                            <label for="nombres">Nombres</label>
+                            <input type="text" id="nombres" name="nombres" required maxlength="40" placeholder="Ej: Juan Sebastian">
+                        </div>
+                        <div class="items-form">
+                            <label for="apellidos">Apellidos</label>
+                            <input type="text" id="apellidos" name="apellidos" required maxlength="40" placeholder="Ej: Perez">
+                        </div>
+                    </div>
+                    
+                    <div class="fila-inputs">
+                        <div class="items-form">
+                            <label for="email">Correo Electrónico</label>
+                            <input type="email" id="email" required placeholder="ejemplo@correo.com">
+                        </div>
+                        <div class="items-form">
+                            <label for="direccion">Dirección</label>
+                            <input type="text" id="direccion" name="direccion" required placeholder="Ej: Calle Falsa 123">
+                        </div>
+                    </div>
+
+                    <div class="fila-inputs">
+                        <div class="items-form">
+                            <label for="pais">País</label>
+                            <input type="text" id="pais" name="pais" required placeholder="Ej: Argentina">
+                        </div>
+                        <div class="items-form">
+                            <label for="ciudad">Ciudad</label>
+                            <input type="text" id="ciudad" name="ciudad" required placeholder="Ej: Buenos Aires">
+                        </div>
+                    </div>
+
+                    <h3 class="titulo-pago"><i class="fa-regular fa-credit-card"></i> Datos de la Tarjeta</h3>
+
+<div class="items-form">
+    <label for="tarjeta">Número de Tarjeta</label>
+    <input type="text" id="tarjeta" required maxlength="16" onkeydown="soloNumeros(event)" placeholder="XXXXXXXXXXXXXXXX">
+</div>
+
+<div class="fila-inputs card-details">
+    <div class="items-form cvc">
+        <label for="cvv">CVV</label>
+        <input type="text" id="cvv" required maxlength="3" onkeydown="soloNumeros(event)" placeholder="123">
+    </div>
+    <div class="items-form expiry">
+        <label>Fecha de Expiración</label>
+        <div class="fila-inputs expiry-inner">
+            <select id="exp-mes" required>
+                <option value="" disabled selected>MM</option>
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                <option value="04">04</option>
+                <option value="05">05</option>
+                <option value="06">06</option>
+                <option value="07">07</option>
+                <option value="08">08</option>
+                <option value="09">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select>
+            
+            <select id="exp-anio" required>
+                <option value="" disabled selected>AA</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+                <option value="32">32</option>
+                <option value="33">33</option>
+                <option value="34">34</option>
+                <option value="35">35</option>
+            </select>
+        </div>
     </div>
 </div>
+
+                    <button type="submit" class="btn-pagar">Confirmar Pago</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
-
 
 
 
