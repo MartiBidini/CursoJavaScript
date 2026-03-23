@@ -131,8 +131,38 @@ function mostrarCarrito() {
             }); 
     });
 
+    const botonesSumar = document.querySelectorAll(".btn-sumar");
+    botonesSumar.forEach(boton => {
+        boton.addEventListener("click", () => {
+            const idBoton = parseInt(boton.id.split("-")[1]);
+            const productoElegido = Carrito.find(producto => producto.id == idBoton);
+            
+            productoElegido.cantidad++; 
+            
+            localStorage.setItem("MiCarrito", JSON.stringify(Carrito));
+            mostrarCarrito(); 
+        });
+    });
+
+    const botonesRestar = document.querySelectorAll(".btn-restar");
+    botonesRestar.forEach(boton => {
+        boton.addEventListener("click", () => {
+            const idBoton = parseInt(boton.id.split("-")[1]);
+            const productoElegido = Carrito.find(producto => producto.id == idBoton);
+            
+            if (productoElegido.cantidad > 1) {
+                productoElegido.cantidad--; 
+                localStorage.setItem("MiCarrito", JSON.stringify(Carrito));
+                mostrarCarrito();
+            } else {
+                eliminarDelCarrito(idBoton); 
+            }
+        });
+    });
+
             const contadorCarrito = document.getElementById("contador-carrito");
-    contadorCarrito.innerText = Carrito.length;
+            const totalItems = Carrito.reduce( (acumulador, producto) => acumulador + producto.cantidad, 0);
+    contadorCarrito.innerText = totalItems;
 }
 
 function eliminarDelCarrito(idQueQuieroBorrar){

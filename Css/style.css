@@ -374,6 +374,46 @@ footer {
     border-radius: 10px;
 }
 
+.controles-cantidad {
+    display: flex;
+    align-items: center;
+    gap: 12px; 
+    background-color: #1a1a1a; 
+    padding: 4px 8px;
+    border-radius: 8px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.btn-restar, .btn-sumar {
+    background-color: #D4AF37;
+    color: #0F0F0F;
+    border: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-restar:hover, .btn-sumar:hover {
+    background-color: #f1cc64;
+    transform: scale(1.1);
+}
+
+.cantidad-item {
+    font-size: 16px;
+    color: #FFF;
+    margin: 0;
+    min-width: 15px; 
+    text-align: center;
+    font-weight: 600;
+}
+
 /*Mensaje de aviso se agrego al carrito(Toast)*/
 
 #toast-mensaje {
@@ -393,3 +433,4 @@ footer {
 #toast-mensaje.mostrar {
     right: 30px; 
 }
+
