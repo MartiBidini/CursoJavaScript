@@ -9,6 +9,7 @@ async function cargarProductos() {
     
     MostrarPerfumes(Perfumes);
     AñadirAlCarrito();
+    mostrarCarrito();
 }
 
 cargarProductos();
@@ -64,9 +65,9 @@ function AñadirAlCarrito(){
     boton.addEventListener("click",function(){  
 
     const idBoton =parseInt( boton.id.split("-")[1]);
-        const PerfumeElegido = Perfumes.find(perfume => perfume.id == idBoton);
+        const PerfumeElegido = Perfumes.find(perfume => perfume.id === idBoton);
     
-        const productosencarrito = Carrito.find(producto=>producto.id==idBoton);
+        const productosencarrito = Carrito.find(producto=>producto.id===idBoton);
 
         if(productosencarrito){
             productosencarrito.cantidad++;
@@ -79,7 +80,19 @@ function AñadirAlCarrito(){
         localStorage.setItem("MiCarrito", JSON.stringify(Carrito));
         
         mostrarCarrito();
-        mostrarMensajeToast();
+
+            Swal.fire({
+                title: "¡Agregado al carrito!",
+                text: PerfumeElegido.Nombre,
+                icon: "success",
+                toast: true, 
+                position: "bottom-end", 
+                showConfirmButton: false, 
+                timer: 2000, 
+                timerProgressBar: true, 
+                background: "#0F0F0F",
+                color: "#D4AF37"
+            });
 });
 });
 }
@@ -173,17 +186,6 @@ function eliminarDelCarrito(idQueQuieroBorrar){
     mostrarCarrito();
 }
 
-function mostrarMensajeToast() {
-    const toast = document.getElementById("toast-mensaje");
-    toast.classList.add("mostrar");
-    
-    setTimeout(() => {
-        toast.classList.remove("mostrar");
-    }, 2500); 
-}
-
-    mostrarCarrito();
-
     //Boton vaciar compra
 
     const botonVaciar = document.getElementById("vaciar-carrito");
@@ -210,16 +212,4 @@ botonFinalizar.addEventListener("click", () => {
     localStorage.setItem("MiCarrito", JSON.stringify(Carrito));
     mostrarCarrito();
 
-    const toastMensajeCompra = document.getElementById("toast-mensaje");
-    
-    toastMensajeCompra.innerText = "¡Gracias por tu compra! Preparando envío..."; 
-    toastMensajeCompra.classList.add("mostrar"); 
-
-    setTimeout(() => {
-        toastMensajeCompra.classList.remove("mostrar");
-        setTimeout(() => {
-            toastMensajeCompra.innerText = "¡Producto agregado al carrito!"; 
-        }, 500); 
-        
-    }, 3000);
 });

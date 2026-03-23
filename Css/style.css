@@ -414,23 +414,4 @@ footer {
     font-weight: 600;
 }
 
-/*Mensaje de aviso se agrego al carrito(Toast)*/
-
-#toast-mensaje {
-    position: fixed;
-    bottom: 30px;
-    right: -300px; 
-    background-color: #D4AF37;
-    color: #0F0F0F;
-    padding: 15px 25px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-    z-index: 2000;
-    transition: right 0.5s ease; 
-}
-#toast-mensaje.mostrar {
-    right: 30px; 
-}
 
