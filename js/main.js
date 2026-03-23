@@ -16,6 +16,17 @@ cargarProductos();
 
 //Cards de Perfumes
 const ContenedorPerfumes = document.getElementById("contenedor_perfumes");
+const flechaIzquierda = document.getElementById("flecha-izquierda");
+const flechaDerecha = document.getElementById("flecha-derecha");
+
+flechaIzquierda.addEventListener("click", () => {
+    
+    ContenedorPerfumes.scrollLeft -= 600; 
+});
+
+flechaDerecha.addEventListener("click", () => {
+    ContenedorPerfumes.scrollLeft += 600; 
+});
 
 function MostrarPerfumes(Perfumes){
 
