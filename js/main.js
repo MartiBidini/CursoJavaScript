@@ -3,7 +3,9 @@ let Perfumes = [];
 
 async function cargarProductos() {
     const productos = await fetch("js/productos.json");
+    
     Perfumes = await productos.json();
+    
     MostrarPerfumes(Perfumes);
     AñadirAlCarrito();
     mostrarCarrito();
